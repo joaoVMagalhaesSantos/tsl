@@ -64,6 +64,12 @@
             txtAbertura = new TextBox();
             label13 = new Label();
             txtSatus = new TextBox();
+            label14 = new Label();
+            txtTelefone = new TextBox();
+            label15 = new Label();
+            txtEmail = new TextBox();
+            txtCelular = new TextBox();
+            label16 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -211,7 +217,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(377, 170);
+            label7.Location = new Point(380, 170);
             label7.Name = "label7";
             label7.Size = new Size(46, 15);
             label7.TabIndex = 15;
@@ -390,11 +396,68 @@
             txtSatus.Size = new Size(128, 23);
             txtSatus.TabIndex = 35;
             // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(375, 199);
+            label14.Name = "label14";
+            label14.Size = new Size(51, 15);
+            label14.TabIndex = 36;
+            label14.Text = "Telefone";
+            // 
+            // txtTelefone
+            // 
+            txtTelefone.Enabled = false;
+            txtTelefone.Location = new Point(432, 196);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.Size = new Size(271, 23);
+            txtTelefone.TabIndex = 37;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(28, 228);
+            label15.Name = "label15";
+            label15.Size = new Size(41, 15);
+            label15.TabIndex = 38;
+            label15.Text = "E-mail";
+            // 
+            // txtEmail
+            // 
+            txtEmail.Enabled = false;
+            txtEmail.Location = new Point(75, 225);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(296, 23);
+            txtEmail.TabIndex = 39;
+            // 
+            // txtCelular
+            // 
+            txtCelular.Enabled = false;
+            txtCelular.Location = new Point(432, 225);
+            txtCelular.Name = "txtCelular";
+            txtCelular.Size = new Size(271, 23);
+            txtCelular.TabIndex = 40;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(382, 228);
+            label16.Name = "label16";
+            label16.Size = new Size(44, 15);
+            label16.TabIndex = 41;
+            label16.Text = "Celular";
+            // 
             // tslc001
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(778, 249);
+            ClientSize = new Size(778, 267);
+            Controls.Add(label16);
+            Controls.Add(txtCelular);
+            Controls.Add(txtEmail);
+            Controls.Add(label15);
+            Controls.Add(txtTelefone);
+            Controls.Add(label14);
             Controls.Add(txtSatus);
             Controls.Add(label13);
             Controls.Add(txtAbertura);
@@ -475,5 +538,11 @@
         private TextBox txtAbertura;
         private Label label13;
         private TextBox txtSatus;
+        private Label label14;
+        private TextBox txtTelefone;
+        private Label label15;
+        private TextBox txtEmail;
+        private TextBox txtCelular;
+        private Label label16;
     }
 }

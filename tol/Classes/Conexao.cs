@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
@@ -55,20 +57,40 @@ public class StrConecta
         }
     }
 
-    public static void Conecta ()
+    public static DataTable Exe_query(string querry)
     {
-        string strConexao = LerConectar();
-        var conexao = new MySqlConnection(strConexao);
-        
-        try
-        {
-            Console.WriteLine("Conectando ao MySQL...");
-            conexao.Open();
-        }
-        catch (Exception ex)
-        {
-            throw new Exception("Erro ao conectar ao Banco de Dados " + ex.Message);
-        }
+        MySqlConnection conexao = new MySqlConnection(LerConectar());
+        conexao.Open();
+
+
+        MySqlDataAdapter adaptador = new MySqlDataAdapter(querry, conexao);
+        MySqlCommand comando = new MySqlCommand(querry, conexao);
+
+        DataTable dados = new DataTable();
+
+        adaptador.Fill(dados);
+
+        return dados;
+
     }
 
+    public static void Nom_query(string querry, List<MySqlParametro> parametros)
+    {
+        MySqlConnection conexao = new MySqlConnection(LerConectar());
+        conexao.Open();
+
+        MySqlCommand comando = new MySqlCommand(querry, conexao);
+
+
+        foreach (MySqlParametro parametro in parametros)
+        {
+            comando.Parameters.Add(new MySqlParameter(parametro.nome, parametro.valor));
+        }
+
+        comando.ExecuteNonQuery();
+
+        comando.Dispose();
+        conexao.Clone();
+        conexao.Dispose();
+    }
 }

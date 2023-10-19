@@ -34,6 +34,9 @@ namespace tol
             txtAbertura.Enabled = true;
             txtSatus.Enabled = true;
             txtPorte.Enabled = true;
+            txtTelefone.Enabled = true;
+            txtEmail.Enabled = true;
+            txtCelular.Enabled = true;
 
             button1.Enabled = false;
             button2.Enabled = false;
@@ -42,9 +45,6 @@ namespace tol
             button8.Enabled = false;
             button7.Enabled = true;
             button5.Enabled = true;
-
-
-
 
         }
 
@@ -112,7 +112,7 @@ namespace tol
 
         private void button7_Click(object sender, EventArgs e)
         {
-            StrConecta.Conecta();
+           
         }
     }
 }
