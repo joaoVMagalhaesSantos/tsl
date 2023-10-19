@@ -40,7 +40,11 @@ namespace tol
             button3.Enabled = false;
             button4.Enabled = false;
             button8.Enabled = false;
+            button7.Enabled = true;
             button5.Enabled = true;
+
+
+
 
         }
 
@@ -104,6 +108,11 @@ namespace tol
                 }
 
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            StrConecta.Conecta();
         }
     }
 }
